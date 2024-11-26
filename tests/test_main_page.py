@@ -43,7 +43,7 @@ class TestMainPage:
         pre_result = mp.get_count_value()
         mp.add_filling_to_order()
         post_result = mp.get_count_value()
-        assert pre_result != post_result, 'Счетчик не изменился'
+        assert pre_result < post_result, 'Счетчик не изменился'
 
     @allure.title('Проверка возможности оформить заказ авторизованным пользователем')
     def test_placing_order(self, driver, test_data):
